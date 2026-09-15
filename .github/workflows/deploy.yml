@@ -2,7 +2,8 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: ["main"]
+    branches:
+      - main
 
 jobs:
   deploy:
@@ -23,7 +24,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          path: './src'   <-- ВОТ ЭТА СТРОКА ГЛАВНАЯ!
+          path: './src'
 
       - name: Deploy to GitHub Pages
         id: deployment
