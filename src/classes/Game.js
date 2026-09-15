@@ -21,7 +21,6 @@ export class Game {
       if (row === this.goblin.row && col === this.goblin.col) {
         this.hit();
       } else {
-        // клик не по гоблину — считаем как промах
         this.miss();
       }
     });
