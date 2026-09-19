@@ -4,6 +4,9 @@
 
 [![Build Status](https://img.shields.io/github/actions/workflow/status/Olga644588/gnome-game2/deploy.yml?style=for-the-badge)](https://github.com/Olga644588/gnome-game2/actions)
 
+**[Открыть игру на GitHub Pages](https://Olga644588.github.io/gnome-game2/)**
+
+
 ##  Что умеет игра
 - Управление персонажем.
 - Атака по гоблинам.
@@ -22,7 +25,8 @@
 
 ## Как запустить локально
 1. Клонировать репозиторий.
-2. Открыть `src/index.html` в браузере (или запустить локальный сервер).
-3. Игра готова к работе.
+2. Установить зависимости: `yarn install`.
+3. Запустить dev-сервер: `yarn dev`.
+4. Открыть `http://localhost:8080` в браузере.
 
 

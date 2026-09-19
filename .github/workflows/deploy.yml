@@ -16,17 +16,22 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          enablement: true
+          node-version: 20
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build with Webpack
+        run: yarn build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          path: './src'
+          path: './dist'
 
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
