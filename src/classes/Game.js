@@ -20,8 +20,6 @@ export class Game {
       if (!this.isRunning || !this.goblin.isVisible()) return;
       if (row === this.goblin.row && col === this.goblin.col) {
         this.hit();
-      } else {
-        this.miss();
       }
     });
   }
