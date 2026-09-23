@@ -11,7 +11,7 @@ export class GameField {
   }
 
   renderGrid(size = 4) {
-    this.container.innerHTML = ''; 
+    this.container.innerHTML = '';
 
     for (let row = 0; row < size; row++) {
       for (let col = 0; col < size; col++) {
@@ -63,4 +63,3 @@ export class GameField {
     });
   }
 }
-

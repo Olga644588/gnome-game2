@@ -27,17 +27,15 @@ h1 {
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-body {
-  cursor: none;
-}
-
-.hammer-cursor {
-  position: fixed;
-  pointer-events: none; 
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  font-size: 32px;
-  user-select: none;
+.goblin-img {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  pointer-events: auto;
+  cursor: pointer;
 }
 
 button {
@@ -53,14 +51,4 @@ button {
 
 button:hover {
   background-color: #555;
-}
-.goblin-img {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
-  pointer-events: auto; 
-  cursor: pointer;
 }
