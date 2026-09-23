@@ -1,9 +1,16 @@
 export class Scoreboard {
   constructor(elementId) {
     this.element = document.getElementById(elementId);
+    
+    if (!this.element) {
+      console.warn(`Scoreboard: элемент #${elementId} не найден`);
+      return;
+    }
+
     this.score = 0;
     this.misses = 0;
     this.maxMisses = 5;
+    
     this.update();
   }
 
@@ -34,3 +41,4 @@ export class Scoreboard {
     return this.misses >= this.maxMisses;
   }
 }
+

@@ -1,25 +1,10 @@
-export class GameField {
-  constructor(containerId, rows = 4, cols = 4) {
-    this.container = document.getElementById(containerId);
-    this.rows = rows;
-    this.cols = cols;
-    this.cells = [];
-    this.goblinElement = null;
-    this.init();
-  }
+import goblinImage from '../assets/goblin.png';
 
-  init() {
-    this.container.innerHTML = '';
-    for (let r = 0; r < this.rows; r++) {
-      for (let c = 0; c < this.cols; c++) {
-        const cell = document.createElement('div');
-        cell.className = 'cell';
-        cell.dataset.row = r;
-        cell.dataset.col = c;
-        this.container.appendChild(cell);
-        this.cells.push(cell);
-      }
-    }
+export class GameField {
+  constructor(id) {
+    this.container = document.getElementById(id);
+    this.goblinElement = null;
+    this.goblinSrc = goblinImage;
   }
 
   showGoblin(row, col) {
@@ -27,14 +12,19 @@ export class GameField {
       this.goblinElement.remove();
       this.goblinElement = null;
     }
+
     const cell = this.container.querySelector(
       `.cell[data-row="${row}"][data-col="${col}"]`
     );
+
     if (!cell) return;
 
-    this.goblinElement = document.createElement('div');
-    this.goblinElement.className = 'goblin';
-    cell.appendChild(this.goblinElement);
+    this.goblinElement = document.createElement('img');
+    this.goblinElement.src = this.goblinSrc;
+    this.goblinElement.className = 'goblin-img';
+    this.goblinElement.alt = 'Гоблин';
+
+    cell.append(this.goblinElement);
   }
 
   hideGoblin() {
@@ -48,8 +38,10 @@ export class GameField {
     this.container.addEventListener('click', (e) => {
       const cell = e.target.closest('.cell');
       if (!cell) return;
+
       const row = parseInt(cell.dataset.row, 10);
       const col = parseInt(cell.dataset.col, 10);
+
       callback(row, col);
     });
   }

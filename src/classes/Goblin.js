@@ -6,16 +6,22 @@ export class Goblin {
     this.durationMs = 1000;
   }
 
-  spawn(rows, cols, exclude = null) {
+  spawn(rows, cols, currentPosition = null) {
     let r, c;
+
     do {
       r = Math.floor(Math.random() * rows);
       c = Math.floor(Math.random() * cols);
-    } while (exclude && r === exclude.row && c === exclude.col);
+    } while (
+      currentPosition &&
+      r === currentPosition.row &&
+      c === currentPosition.col
+    );
 
     this.row = r;
     this.col = c;
     this.isActive = true;
+
     return { row: r, col: c };
   }
 

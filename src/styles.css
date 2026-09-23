@@ -27,23 +27,6 @@ h1 {
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.goblin {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  width: 80px;
-  height: 80px;
-  background: red;
-  border-radius: 50%;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-  animation: bounce 0.5s infinite alternate; 
-  pointer-events: none; 
-}
-
-@keyframes bounce {
-  to { transform: translateY(-5px); }
-}
-
 body {
   cursor: none;
 }
@@ -70,4 +53,14 @@ button {
 
 button:hover {
   background-color: #555;
+}
+.goblin-img {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  pointer-events: auto; 
+  cursor: pointer;
 }
