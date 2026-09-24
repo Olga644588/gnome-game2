@@ -55,6 +55,7 @@ export class Game {
       col === this.currentGoblinPos[1]
     );
 
+
     this.currentGoblinPos = [row, col];
     this.field.showGoblin(row, col);
 
@@ -67,9 +68,9 @@ export class Game {
     this.missed++;
     this.updateScore();
     this.field.hideGoblin();
-    this.currentGoblinPos = null;
 
     if (this.missed >= this.maxMissed) {
+      this.currentGoblinPos = null;  
       this.gameOver();
     } else {
       this.spawnGoblin();

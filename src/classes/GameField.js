@@ -19,7 +19,7 @@ export class GameField {
         cell.classList.add('cell');
         cell.dataset.row = row;
         cell.dataset.col = col;
-        this.container.appendChild(cell);
+        this.container.append(cell);
       }
     }
   }
